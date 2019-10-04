@@ -1,1 +1,26 @@
-<p>signup works!</p>
+<h1>SignUp</h1>
+<div class="form">
+    <form class="signup">
+        <div class="form-group">
+            <!-- <label for="email">Email address</label> -->
+            <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
+            <!-- <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+            <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Signup</button>
+        <br>
+    
+        <p class="has-text-grey">Already got an account? <a routerLink="/login">Login</a> now!</p>
+        <br>
+    </form>
+
+</div>
