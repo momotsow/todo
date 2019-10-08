@@ -2,9 +2,11 @@
     <h2 class="text-center">Add Todo</h2>
     <form [formGroup]="addForm" novalidate class="form">
         <div class="form-group">
-            <label for="todo">Todo</label>
-            <input type="text" formControlName="todo" placeholder="Todo" class="form-control">
+            <input type="text" formControlName="todo" autocomplete="" placeholder="Todo" class="form-control">
         </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('todo').hasError('required') && addForm.get('todo').touched">
+            cannot be empty
+          </div>
        <button class="btn btn-success" (click)="onSubmit()">Add Todo</button>
     </form>
 </div>

@@ -1,22 +1,32 @@
 <h1>SignUp</h1>
 <div class="form">
-    <form class="signup">
+    <form [formGroup]="signupForm" novalidate class="form">
         <div class="form-group">
-            <!-- <label for="email">Email address</label> -->
-            <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
-            <!-- <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-        </div>
+            <input type="email" formControlName="email" autocomplete="email" aria-describedby="email" placeholder="Enter email">
+            </div>
+            <div class="alert alert-danger" *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched">
+                    Enter Valid Email
+                  </div>
         <div class="form-group">
-            <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Name">
+            <input type="name" formControlName="name" autocomplete="nickname" aria-describedby="name" placeholder="Name">
         </div>
+        <div class="alert alert-danger" *ngIf="signupForm.get('name').hasError('required') && signupForm.get('name').touched">
+                Enter Name
+              </div>
         <div class="form-group">
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input type="password" formControlName="password" autocomplete="current-password" placeholder="Password">
         </div>
+        <div class="alert alert-danger" *ngIf="signupForm.get('password').hasError('required') && signupForm.get('password').touched">
+                Enter Password
+              </div>
         <div class="form-group">
-            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password">
+            <input type="password" formControlName="confirmPassword" autocomplete="current-password" placeholder="Confirm Password">
         </div>
+        <div class="alert alert-danger" *ngIf="signupForm.get('confirmPassword').hasError('required') && signupForm.get('confirmPassword').touched">
+                Password must match
+              </div>
         
-        <button type="submit" class="btn btn-primary">Signup</button>
+        <button type="submit" (click)="onSubmit()" routerLink="/login" class="btn btn-primary">Signup</button>
         <br>
     
         <p class="has-text-grey">Already got an account? <a routerLink="/login">Login</a> now!</p>

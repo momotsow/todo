@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 import { TodoComponent } from './todo/todo.component';
+import { AddTodoComponent } from './todo/add-todo/add-todo.component';
+
 
 const routes: Routes = [
-  // { path: '', component: TodoComponent },
+  { path: '', component: SignupComponent },
+  { path: '*', pathMatch: 'full', redirectTo: '' },
+  { path: 'login', component: LoginComponent },
+  { path: 'todo', component: TodoComponent },
+  { path: 'add-todo', component: AddTodoComponent }
 
 ];
 
