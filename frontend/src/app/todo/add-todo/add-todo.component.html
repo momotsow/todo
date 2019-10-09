@@ -1,5 +1,4 @@
 <div>
-    <h2 class="text-center">Add Todo</h2>
     <form [formGroup]="addForm" novalidate class="form">
         <div class="form-group">
             <input type="text" formControlName="todo" autocomplete="" placeholder="Todo" class="form-control">
@@ -7,6 +6,6 @@
         <div class="alert alert-danger" *ngIf="addForm.get('todo').hasError('required') && addForm.get('todo').touched">
             cannot be empty
           </div>
-       <button class="btn btn-success" (click)="onSubmit()">Add Todo</button>
+       <button class="btn btn-success btn-lg btn-block" (click)="onSubmit()">Add Todo</button>
     </form>
 </div>
